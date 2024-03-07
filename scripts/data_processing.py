@@ -11,22 +11,32 @@ if __name__ == "__main__":
         while len(file_name) != 4:
             file_name = "0" + file_name
 
-        file_name = "A" + file_name + ".txt"
+        file_name_case = "A" + file_name + ".txt"
+        file_name_question = "C" + file_name + ".txt"
+        file_name_answer = "D" + file_name + ".txt"
 
-        with open("../data/original_data/case/" + file_name, "rb") as f:
+        with open("../data/original_data/case/" + file_name_case, "rb") as f:
             encoding = chardet.detect(f.read())["encoding"]
 
         print("*"*50)
         print(i)
 
         try:
-            with open("../data/original_data/case/" + file_name, encoding=encoding) as f:
+            with open("../data/original_data/case/" + file_name_case, encoding=encoding) as f:
                 for line in f.readlines():
                     print(line)
         except Exception as e:
-            with open("../data/original_data/case/" + file_name, encoding="gbk") as f:
+            with open("../data/original_data/case/" + file_name_case, encoding="gbk") as f:
                 for line in f.readlines():
                     print(line)
+
+        with open("../data/original_data/question/" + file_name_question, encoding="GB2312") as f:
+            for line in f.readlines():
+                print(line.strip())
+
+        with open("../data/original_data/answer/" + file_name_answer, encoding="GB2312") as f:
+            for line in f.readlines():
+                print(line.strip())
 
         if i > 20:
             break
