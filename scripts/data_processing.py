@@ -1,11 +1,11 @@
 import chardet
-
+from collections import defaultdict
 
 
 if __name__ == "__main__":
 
     # question
-    question = []
+    question = defaultdict(int)
     for i in range(1, 116):
         file_name = str(i)
         while len(file_name) != 4:
@@ -20,4 +20,6 @@ if __name__ == "__main__":
             for line in f.readlines():
                 line = line.strip().split(".")[-1]
                 line = line.split("系数")[0]
-                print(line)
+                question[line] += 1
+
+    print(question)
