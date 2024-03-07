@@ -44,16 +44,30 @@ if __name__ == "__main__":
 
         try:
             with open("../data/original_data/answer/" + file_name_answer, encoding=encoding) as f:
+                j = 1
+                tmp = ""
                 for line in f.readlines():
-                    line = line.strip().split(".")[-1]
-                    line = line.replace("\t", "")
-                    single["answer"].append(line)
+                    if "{}.".format(str(j)):
+                        tmp = tmp.replace("\n", "")
+                        if len(tmp) > 1 and len(single["answer"]) == j-1:
+                            single["answer"].append(tmp)
+                            tmp = line.strip().split(".")[-1]
+                            j += 1
+                    else:
+                        tmp += line.strip()
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
+                j = 1
+                tmp = ""
                 for line in f.readlines():
-                    line = line.strip().split(".")[-1]
-                    line = line.replace("\t", "")
-                    single["answer"].append(line)
+                    if "{}.".format(str(j)):
+                        tmp = tmp.replace("\n", "")
+                        if len(tmp) > 1 and len(single["answer"]) == j - 1:
+                            single["answer"].append(tmp)
+                            tmp = line.strip().split(".")[-1]
+                            j += 1
+                    else:
+                        tmp += line.strip()
 
         # if i > 20:
         #     break
