@@ -47,6 +47,7 @@ if __name__ == "__main__":
                 j = 1
                 tmp = ""
                 for line in f.readlines():
+                    print(line, tmp)
                     if "{}.".format(str(j)):
                         tmp = tmp.replace("\n", "")
                         if len(tmp) > 1 and len(single["answer"]) == j-2:
@@ -61,6 +62,7 @@ if __name__ == "__main__":
                 j = 1
                 tmp = ""
                 for line in f.readlines():
+                    print(line, tmp)
                     if "{}.".format(str(j)):
                         tmp = tmp.replace("\n", "")
                         if len(tmp) > 1 and len(single["answer"]) == j - 2:
