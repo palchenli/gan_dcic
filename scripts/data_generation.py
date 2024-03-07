@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 "content": input_tmp,
                 "summary": output_tmp
             }
-            out.append(json.dumps(tmp))
+            out.append(json.dumps(tmp, ensure_ascii=False))
 
     random.shuffle(out)
 
