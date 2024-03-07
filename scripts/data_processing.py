@@ -16,14 +16,15 @@ if __name__ == "__main__":
         with open("../data/original_data/case/" + file_name, "rb") as f:
             encoding = chardet.detect(f.read())["encoding"]
 
+        print("*"*50)
+        print(i)
+
         try:
             with open("../data/original_data/case/" + file_name, encoding=encoding) as f:
-                print("*"*50)
                 for line in f.readlines():
                     print(line)
         except Exception as e:
             with open("../data/original_data/case/" + file_name, encoding="gbk") as f:
-                print("*"*50)
                 for line in f.readlines():
                     print(line)
 
