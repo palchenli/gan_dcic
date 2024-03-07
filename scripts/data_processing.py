@@ -40,11 +40,11 @@ if __name__ == "__main__":
         try:
             with open("../data/original_data/answer/" + file_name_answer, encoding=encoding) as f:
                 for line in f.readlines():
-                    print(line)
+                    print(line.strip())
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
                 for line in f.readlines():
-                    print(line)
+                    print(line.strip())
 
         if i > 20:
             break
