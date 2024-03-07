@@ -18,9 +18,6 @@ if __name__ == "__main__":
         with open("../data/original_data/case/" + file_name_case, "rb") as f:
             encoding = chardet.detect(f.read())["encoding"]
 
-        print("*"*50)
-        print(i)
-
         single = {
             "case": "",
             "question": [],
@@ -61,9 +58,12 @@ if __name__ == "__main__":
         # if i > 20:
         #     break
 
-        print(len(single["case"]))
-        print(len(single["question"]))
-        print(len(single["answer"]))
+        if len(single["answer"]) != 15:
+            print("*"*50)
+            print(i)
+            print(len(single["case"]))
+            print(len(single["question"]))
+            print(len(single["answer"]))
 
 
     # question
