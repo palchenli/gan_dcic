@@ -11,9 +11,8 @@ if __name__ == "__main__":
         row = row[1]
 
         case = row["case"]
-        questions = row["question"]
-        answers = row["answer"]
-        print(len(questions), len(answers))
+        questions = eval(row["question"])
+        answers = eval(row["answer"])
 
         for i in range(len(questions)):
             input_tmp = "你是一个医生，请根据患者的病例回答患者的问题。患者的病例为：{}，患者的问题为：{}".format(case, questions[i])
