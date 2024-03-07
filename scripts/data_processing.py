@@ -49,10 +49,11 @@ if __name__ == "__main__":
                 for line in f.readlines():
                     if "{}.".format(str(j)):
                         tmp = tmp.replace("\n", "")
-                        if len(tmp) > 1 and len(single["answer"]) == j-1:
+                        if len(tmp) > 1 and len(single["answer"]) == j-2:
                             single["answer"].append(tmp)
-                            tmp = line.strip().split(".")[-1]
                             j += 1
+
+                        tmp = line.strip().split(".")[-1]
                     else:
                         tmp += line.strip()
         except Exception as e:
@@ -62,10 +63,11 @@ if __name__ == "__main__":
                 for line in f.readlines():
                     if "{}.".format(str(j)):
                         tmp = tmp.replace("\n", "")
-                        if len(tmp) > 1 and len(single["answer"]) == j - 1:
+                        if len(tmp) > 1 and len(single["answer"]) == j - 2:
                             single["answer"].append(tmp)
-                            tmp = line.strip().split(".")[-1]
                             j += 1
+
+                        tmp = line.strip().split(".")[-1]
                     else:
                         tmp += line.strip()
 
