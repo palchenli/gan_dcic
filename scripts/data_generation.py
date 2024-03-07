@@ -1,10 +1,10 @@
 import pandas as pd
 import random
+import json
 
 
 if __name__ == "__main__":
     df = pd.read_csv("../data/data.csv", sep="|")
-    print(df.shape)
 
     out = []
     for row in df.iterrows():
@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 "content": input_tmp,
                 "summary": output_tmp
             }
-            out.append(tmp)
+            out.append(json.dumps(tmp))
 
     random.shuffle(out)
 
