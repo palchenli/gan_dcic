@@ -59,10 +59,6 @@ if __name__ == "__main__":
                     else:
                         tmp += line.strip()
 
-                tmp = tmp.replace("{}.".format(str(j-1)), "")
-                tmp = tmp.replace("\t", "")
-                single["answer"].append(tmp)
-
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
                 j = 1
@@ -80,9 +76,6 @@ if __name__ == "__main__":
                     else:
                         tmp += line.strip()
 
-                tmp = tmp.replace("{}.".format(str(j - 1)), "")
-                tmp = tmp.replace("\t", "")
-                single["answer"].append(tmp)
 
         # if i > 20:
         #     break
