@@ -47,7 +47,7 @@ if __name__ == "__main__":
                 j = 1
                 tmp = ""
                 for line in f.readlines():
-                    if "{}.".format(str(j)):
+                    if "{}.".format(str(j)) in line:
                         print("*"*50)
                         print(tmp)
                         tmp = line.strip()
@@ -60,7 +60,7 @@ if __name__ == "__main__":
                 j = 1
                 tmp = ""
                 for line in f.readlines():
-                    if "{}.".format(str(j)):
+                    if "{}.".format(str(j)) in line:
                         print("*"*50)
                         print(tmp)
                         tmp = line.strip()
