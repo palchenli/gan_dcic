@@ -47,29 +47,22 @@ if __name__ == "__main__":
                 j = 1
                 tmp = ""
                 for line in f.readlines():
-                    print(line, tmp)
                     if "{}.".format(str(j)):
-                        tmp = tmp.replace("\n", "")
-                        if len(tmp) > 1 and len(single["answer"]) == j-2:
-                            single["answer"].append(tmp)
-                            j += 1
-
-                        tmp = line.strip().split(".")[-1]
+                        print(tmp)
+                        tmp = line.strip()
+                        j += 1
                     else:
                         tmp += line.strip()
+
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
                 j = 1
                 tmp = ""
                 for line in f.readlines():
-                    print(line, tmp)
                     if "{}.".format(str(j)):
-                        tmp = tmp.replace("\n", "")
-                        if len(tmp) > 1 and len(single["answer"]) == j - 2:
-                            single["answer"].append(tmp)
-                            j += 1
-
-                        tmp = line.strip().split(".")[-1]
+                        print(tmp)
+                        tmp = line.strip()
+                        j += 1
                     else:
                         tmp += line.strip()
 
