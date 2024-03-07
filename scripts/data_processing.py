@@ -49,7 +49,7 @@ if __name__ == "__main__":
             with open("../data/original_data/answer/" + file_name_answer, encoding=encoding) as f:
                 for line in f.readlines():
                     line = line.strip().split(".")[-1]
-                    line = line.replace(" ", "")
+                    line = line.replace("\t", "")
                     single["answer"].append(line)
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
@@ -61,7 +61,9 @@ if __name__ == "__main__":
         if i > 20:
             break
 
-        print(single)
+        print(single["case"])
+        print(single["question"])
+        print(single["answer"])
 
 
     # question
