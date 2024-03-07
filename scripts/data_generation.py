@@ -3,7 +3,7 @@ import random
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("../data/all_data.csv", sep="|")
+    df = pd.read_csv("../data/data.csv", sep="|")
     print(df.shape)
 
     out = []
