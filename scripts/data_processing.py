@@ -5,7 +5,7 @@ from collections import defaultdict
 
 if __name__ == "__main__":
     all_data = []
-    for i in range(1, 116):
+    for i in range(116, 121):
         file_name = str(i)
         while len(file_name) != 4:
             file_name = "0" + file_name
@@ -80,7 +80,7 @@ if __name__ == "__main__":
             print(len(single["question"]))
             print(len(single["answer"]))
 
-        # all_data.append(single)
+        all_data.append(single)
 
-    # df = pd.DataFrame(all_data)
-    # df.to_csv("../data/data.csv", sep="|", index=False)
+    df = pd.DataFrame(all_data)
+    df.to_csv("../data/data_val.csv", sep="|", index=False)
