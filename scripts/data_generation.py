@@ -4,7 +4,7 @@ import json
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("../data/data.csv", sep="|")
+    df = pd.read_csv("../data/data_val.csv", sep="|")
 
     out = []
     for row in df.iterrows():
@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     random.shuffle(out)
 
-    f = open("../data/train_data.json", "w")
+    f = open("../data/val_data.json", "w")
     for tmp in out:
         f.write(str(tmp)+"\n")
     f.close()
