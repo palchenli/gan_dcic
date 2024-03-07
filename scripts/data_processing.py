@@ -58,12 +58,12 @@ if __name__ == "__main__":
         # if i > 20:
         #     break
 
-        if len(single["answer"]) != 15:
+        if len(single["answer"]) != 15 or len(single["question"]) != 15:
             print("*"*50)
             print(i)
             print(len(single["case"]))
-            print(len(single["question"]))
-            print(len(single["answer"]))
+            print(single["question"])
+            print(single["answer"])
 
 
     # question
