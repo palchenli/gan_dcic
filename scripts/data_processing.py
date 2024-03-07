@@ -91,8 +91,8 @@ if __name__ == "__main__":
             print("*"*50)
             print(i)
             print(len(single["case"]))
-            print(single["question"])
-            print(single["answer"])
+            print(len(single["question"]))
+            print(len(single["answer"]))
 
 
     # question
