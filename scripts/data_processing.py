@@ -34,9 +34,14 @@ if __name__ == "__main__":
             for line in f.readlines():
                 print(line.strip())
 
-        with open("../data/original_data/answer/" + file_name_answer, encoding="GB2312") as f:
-            for line in f.readlines():
-                print(line.strip())
+        try:
+            with open("../data/original_data/answer/" + file_name_answer, encoding=encoding) as f:
+                for line in f.readlines():
+                    print(line)
+        except Exception as e:
+            with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
+                for line in f.readlines():
+                    print(line)
 
         if i > 20:
             break
