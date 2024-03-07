@@ -53,13 +53,13 @@ if __name__ == "__main__":
                         tmp = line.strip()
                         j += 1
                         if len(tmp) > 1:
-                            tmp = tmp.replace("{}.".format(str(j)), "")
+                            tmp = tmp.replace("{}.".format(str(j-1)), "")
                             tmp = tmp.replace("\t", "")
                             single["answer"].append(tmp)
                     else:
                         tmp += line.strip()
 
-                tmp = tmp.replace("{}.".format(str(j)), "")
+                tmp = tmp.replace("{}.".format(str(j-1)), "")
                 tmp = tmp.replace("\t", "")
                 single["answer"].append(tmp)
 
@@ -73,10 +73,14 @@ if __name__ == "__main__":
                         # print(tmp)
                         tmp = line.strip()
                         j += 1
+                        if len(tmp) > 1:
+                            tmp = tmp.replace("{}.".format(str(j - 1)), "")
+                            tmp = tmp.replace("\t", "")
+                            single["answer"].append(tmp)
                     else:
                         tmp += line.strip()
 
-                tmp = tmp.replace("{}.".format(str(j)), "")
+                tmp = tmp.replace("{}.".format(str(j - 1)), "")
                 tmp = tmp.replace("\t", "")
                 single["answer"].append(tmp)
 
