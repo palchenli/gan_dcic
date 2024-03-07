@@ -19,8 +19,8 @@ if __name__ == "__main__":
         try:
             with open("../data/original_data/case/" + file_name, encoding=encoding) as f:
                 print("*"*50)
-                for line in f.readlines():
-                    print(line)
+                # for line in f.readlines():
+                #     print(line)
         except Exception as e:
             print(encoding)
             print(i)
