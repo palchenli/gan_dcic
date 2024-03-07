@@ -19,4 +19,5 @@ if __name__ == "__main__":
         with open("../data/original_data/question/"+file_name, encoding="GB2312") as f:
             for line in f.readlines():
                 line = line.strip().split(".")[-1]
+                line = line.strip("系数")[0]
                 print(line)
