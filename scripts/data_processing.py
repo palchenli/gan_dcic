@@ -48,12 +48,20 @@ if __name__ == "__main__":
                 tmp = ""
                 for line in f.readlines():
                     if "{}.".format(str(j)) in line:
-                        print("*"*50)
-                        print(tmp)
+                        # print("*"*50)
+                        # print(tmp)
                         tmp = line.strip()
                         j += 1
+                        if len(tmp) > 1:
+                            tmp = tmp.replace("{}.".format(str(j)), "")
+                            tmp = tmp.replace("\t", "")
+                            single["answer"].append(tmp)
                     else:
                         tmp += line.strip()
+
+                tmp = tmp.replace("{}.".format(str(j)), "")
+                tmp = tmp.replace("\t", "")
+                single["answer"].append(tmp)
 
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
@@ -61,12 +69,16 @@ if __name__ == "__main__":
                 tmp = ""
                 for line in f.readlines():
                     if "{}.".format(str(j)) in line:
-                        print("*"*50)
-                        print(tmp)
+                        # print("*"*50)
+                        # print(tmp)
                         tmp = line.strip()
                         j += 1
                     else:
                         tmp += line.strip()
+
+                tmp = tmp.replace("{}.".format(str(j)), "")
+                tmp = tmp.replace("\t", "")
+                single["answer"].append(tmp)
 
         # if i > 20:
         #     break
