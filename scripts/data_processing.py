@@ -73,15 +73,14 @@ if __name__ == "__main__":
                     else:
                         tmp += line.strip()
 
+        if len(single["answer"]) != 15 or len(single["question"]) != 15:
+            print("*"*50)
+            print(i)
+            print(len(single["case"]))
+            print(len(single["question"]))
+            print(len(single["answer"]))
 
-        # if len(single["answer"]) != 15 or len(single["question"]) != 15:
-        #     print("*"*50)
-        #     print(i)
-        #     print(len(single["case"]))
-        #     print(len(single["question"]))
-        #     print(len(single["answer"]))
+        # all_data.append(single)
 
-        all_data.append(single)
-
-    df = pd.DataFrame(all_data)
-    df.to_csv("../data/data.csv", sep="|", index=False)
+    # df = pd.DataFrame(all_data)
+    # df.to_csv("../data/data.csv", sep="|", index=False)
