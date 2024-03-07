@@ -55,15 +55,15 @@ if __name__ == "__main__":
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
                 for line in f.readlines():
                     line = line.strip().split(".")[-1]
-                    line = line.replace(" ", "")
+                    line = line.replace("\t", "")
                     single["answer"].append(line)
 
-        if i > 20:
-            break
+        # if i > 20:
+        #     break
 
-        print(single["case"])
-        print(single["question"])
-        print(single["answer"])
+        print(len(single["case"]))
+        print(len(single["question"]))
+        print(len(single["answer"]))
 
 
     # question
