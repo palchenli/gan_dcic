@@ -19,18 +19,16 @@ if __name__ == "__main__":
         try:
             with open("../data/original_data/case/" + file_name, encoding=encoding) as f:
                 print("*"*50)
-                k = 0
                 for line in f.readlines():
-                    k += 1
-                #     print(line)
+                    print(line)
         except Exception as e:
-            print(encoding)
-            print(i)
             with open("../data/original_data/case/" + file_name, encoding="gbk") as f:
                 print("*"*50)
-                k = 0
                 for line in f.readlines():
-                    k += 1
+                    print(line)
+
+        if i > 20:
+            break
 
 
     # question
