@@ -1,11 +1,10 @@
 import chardet
+import pandas as pd
 from collections import defaultdict
 
 
 if __name__ == "__main__":
-
-    # case
-
+    all_data = []
     for i in range(1, 116):
         file_name = str(i)
         while len(file_name) != 4:
@@ -65,8 +64,6 @@ if __name__ == "__main__":
                 tmp = ""
                 for line in f.readlines():
                     if "{}.".format(str(j)) in line:
-                        # print("*"*50)
-                        # print(tmp)
                         tmp = line.strip()
                         j += 1
                         if len(tmp) > 1:
@@ -77,33 +74,14 @@ if __name__ == "__main__":
                         tmp += line.strip()
 
 
-        # if i > 20:
-        #     break
+        # if len(single["answer"]) != 15 or len(single["question"]) != 15:
+        #     print("*"*50)
+        #     print(i)
+        #     print(len(single["case"]))
+        #     print(len(single["question"]))
+        #     print(len(single["answer"]))
 
-        if len(single["answer"]) != 15 or len(single["question"]) != 15:
-            print("*"*50)
-            print(i)
-            print(len(single["case"]))
-            print(len(single["question"]))
-            print(len(single["answer"]))
+        all_data.append(single)
 
-
-    # question
-    # question = defaultdict(int)
-    # for i in range(1, 116):
-    #     file_name = str(i)
-    #     while len(file_name) != 4:
-    #         file_name = "0" + file_name
-    #
-    #     file_name = "C" + file_name + ".txt"
-    #
-    #     # with open("../data/original_data/question/"+file_name, "rb") as f:
-    #     #     print(chardet.detect(f.read()))
-    #
-    #     with open("../data/original_data/question/"+file_name, encoding="GB2312") as f:
-    #         for line in f.readlines():
-    #             line = line.strip().split(".")[-1]
-    #             line = line.split("系数")[0]
-    #             question[line] += 1
-    #
-    # print(question)
+    df = pd.DataFrame(all_data)
+    df.to_csv("../data/data.csv", sep="|", index=False)
