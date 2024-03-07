@@ -21,18 +21,26 @@ if __name__ == "__main__":
         print("*"*50)
         print(i)
 
+        single = {
+            "case": "",
+            "question": [],
+            "answer": []
+        }
+
         try:
             with open("../data/original_data/case/" + file_name_case, encoding=encoding) as f:
                 for line in f.readlines():
-                    print(line)
+                    single["case"] += line.strip()
         except Exception as e:
             with open("../data/original_data/case/" + file_name_case, encoding="gbk") as f:
                 for line in f.readlines():
-                    print(line)
+                    single["case"] += line.strip()
 
         with open("../data/original_data/question/" + file_name_question, encoding="GB2312") as f:
             for line in f.readlines():
-                print(line.strip())
+                line = line.strip().split(".")[-1]
+                line = line.split("系数")[0]
+                single["question"].append(line)
 
         with open("../data/original_data/answer/" + file_name_answer, "rb") as f:
             encoding = chardet.detect(f.read())["encoding"]
@@ -40,14 +48,20 @@ if __name__ == "__main__":
         try:
             with open("../data/original_data/answer/" + file_name_answer, encoding=encoding) as f:
                 for line in f.readlines():
-                    print(line.strip())
+                    line = line.strip().split(".")[-1]
+                    line = line.replace(" ", "")
+                    single["answer"].append(line)
         except Exception as e:
             with open("../data/original_data/answer/" + file_name_answer, encoding="gbk") as f:
                 for line in f.readlines():
-                    print(line.strip())
+                    line = line.strip().split(".")[-1]
+                    line = line.replace(" ", "")
+                    single["answer"].append(line)
 
         if i > 20:
             break
+
+        print(single)
 
 
     # question
