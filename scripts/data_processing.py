@@ -14,12 +14,12 @@ if __name__ == "__main__":
         file_name = "A" + file_name + ".txt"
 
         with open("../data/original_data/case/" + file_name, "rb") as f:
-            print(chardet.detect(f.read()))
+            encoding = chardet.detect(f.read())["encoding"]
 
-        # with open("../data/original_data/case/" + file_name, encoding="GB2312") as f:
-        #     print("*"*50)
-        #     for line in f.readlines():
-        #         print(line)
+        with open("../data/original_data/case/" + file_name, encoding=encoding) as f:
+            print("*"*50)
+            for line in f.readlines():
+                print(line)
 
 
     # question
