@@ -13,9 +13,9 @@ if __name__ == "__main__":
 
         file_name = "C" + file_name + ".txt"
 
-        with open("../data/original_data/question/"+file_name, "rb") as f:
-            print(chardet.detect(f.read()))
+        # with open("../data/original_data/question/"+file_name, "rb") as f:
+        #     print(chardet.detect(f.read()))
 
-        # with open("../data/original_data/question/"+file_name) as f:
-        #     for line in f.readlines():
-        #         print(line)
+        with open("../data/original_data/question/"+file_name, encoding="GB2312") as f:
+            for line in f.readlines():
+                print(line)
