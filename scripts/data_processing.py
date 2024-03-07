@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
         file_name = "C" + file_name + ".txt"
 
-        with open("../data/original/question"+file_name, "rb") as f:
+        with open("../data/original/question/"+file_name, "rb") as f:
             print(chardet.detect(f.read()))
 
         # with open("../data/original_data/question/"+file_name) as f:
