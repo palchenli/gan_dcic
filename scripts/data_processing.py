@@ -34,6 +34,9 @@ if __name__ == "__main__":
             for line in f.readlines():
                 print(line.strip())
 
+        with open("../data/original_data/answer/" + file_name_answer, "rb") as f:
+            encoding = chardet.detect(f.read())["encoding"]
+
         try:
             with open("../data/original_data/answer/" + file_name_answer, encoding=encoding) as f:
                 for line in f.readlines():
