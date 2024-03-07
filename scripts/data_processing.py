@@ -26,11 +26,11 @@ if __name__ == "__main__":
         try:
             with open("../data/original_data/case/" + file_name_case, encoding=encoding) as f:
                 for line in f.readlines():
-                    single["case"] += line.strip()
+                    single["case"] += line.strip() + ";"
         except Exception as e:
             with open("../data/original_data/case/" + file_name_case, encoding="gbk") as f:
                 for line in f.readlines():
-                    single["case"] += line.strip()
+                    single["case"] += line.strip() + ";"
 
         with open("../data/original_data/question/" + file_name_question, encoding="GB2312") as f:
             for line in f.readlines():
