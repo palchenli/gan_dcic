@@ -12,19 +12,19 @@ if __name__ == "__main__":
         "answer": []
     }
 
-    with open("../data/original_data/case/" + file_name_case, "rb") as f:
+    with open("../data/test_data/case/" + file_name_case, "rb") as f:
         encoding = chardet.detect(f.read())["encoding"]
 
     try:
-        with open("../data/original_data/case/" + file_name_case, encoding=encoding) as f:
+        with open("../data/test_data/case/" + file_name_case, encoding=encoding) as f:
             for line in f.readlines():
                 single["case"] += (line.strip() + ";")
     except Exception as e:
-        with open("../data/original_data/case/" + file_name_case, encoding="gbk") as f:
+        with open("../data/test_data/case/" + file_name_case, encoding="gbk") as f:
             for line in f.readlines():
                 single["case"] += (line.strip() + ";")
 
-    with open("../data/original_data/question/" + file_name_question, encoding="GB2312") as f:
+    with open("../data/test_data/question/" + file_name_question, encoding="GB2312") as f:
         for line in f.readlines():
             line = line.strip().split(".")[-1]
             line = line.split("系数")[0]
