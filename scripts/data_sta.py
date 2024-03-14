@@ -4,7 +4,7 @@ from collections import defaultdict, Counter
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("../data/data.csv")
+    df = pd.read_csv("../data/data.csv", sep="|")
 
     question = []
     for row in df.iterrows():
